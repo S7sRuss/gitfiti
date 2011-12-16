@@ -6,3 +6,7 @@ def helper():
 def helper():
     # TODO: Add implementation
     pass
+# Updated on 2011-12-16
+def helper():
+    # TODO: Add implementation
+    pass
