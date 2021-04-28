@@ -1,7 +1,7 @@
 # Full of git commit -a -m "update streak for `date -I -d "$DATE"`" --date="$DATE"
 # For every day randomly since 2011
 
-START_DATE="2011-01-01"
+START_DATE="2021-04-28"
 END_DATE=$(date -I)
 
 # Convert dates to seconds since epoch for easier calculation
@@ -15,11 +15,10 @@ for i in $(seq 0 $TOTAL_DAYS); do
     # Calculate the date for this iteration
     CURRENT_DATE=$(date -I -d "$START_DATE + $i days")
     
-    # Randomly decide whether to make a commit (80% chance)
-    if [ $((RANDOM % 5)) -lt 4 ]; then
-        echo "$CURRENT_DATE - Daily update"
+    # Randomly decide whether to make a commit (50% chance)
+   if [ $((RANDOM % 2)) -eq 0 ]; then
         echo "$CURRENT_DATE - Daily update" >> activity.log
-        git add activity.log
+        git add .
         git commit -m "update streak for $CURRENT_DATE" --date="$CURRENT_DATE"
     fi
 done
