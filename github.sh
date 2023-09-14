@@ -1,7 +1,7 @@
 # Full of git commit -a -m "update streak for `date -I -d "$DATE"`" --date="$DATE"
 # For every day randomly since 2011
 
-START_DATE="2021-04-28"
+START_DATE="2023-09-14"
 END_DATE=$(date -I)
 
 # Convert dates to seconds since epoch for easier calculation
