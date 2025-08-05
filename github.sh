@@ -17,7 +17,10 @@ for i in $(seq 0 $TOTAL_DAYS); do
     
     # Randomly decide whether to make a commit (80% chance)
     if [ $((RANDOM % 5)) -lt 4 ]; then
-        git commit -a -m "update streak for $CURRENT_DATE" --date="$CURRENT_DATE"
+        echo "$CURRENT_DATE - Daily update"
+        echo "$CURRENT_DATE - Daily update" >> activity.log
+        git add activity.log
+        git commit -m "update streak for $CURRENT_DATE" --date="$CURRENT_DATE"
     fi
 done
 
