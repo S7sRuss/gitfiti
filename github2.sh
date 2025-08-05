@@ -9,11 +9,13 @@ START_EPOCH=$(date -d "$START_DATE" +%s)
 END_EPOCH=$(date -d "$END_DATE" +%s)
 
 # Calculate total days
+
 TOTAL_DAYS=$(( (END_EPOCH - START_EPOCH) / 86400 ))
 
 # Array of file types and extensions
 FILE_TYPES=("java" "js" "py" "cpp" "go" "rs" "ts" "php" "rb" "swift")
 FILE_NAMES=("Main" "App" "Utils" "Helper" "Service" "Controller" "Model" "Config" "Test" "Handler")
+
 
 
 for i in $(seq 0 $TOTAL_DAYS); do
