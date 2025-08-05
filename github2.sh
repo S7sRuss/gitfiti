@@ -1,7 +1,7 @@
 # Full git commit script with 50% chance and multiple file types
 # For every day randomly since 2011
 
-START_DATE="2011-01-01"
+START_DATE="2023-07-12"
 END_DATE=$(date -I)
 
 # Convert dates to seconds since epoch for easier calculation
