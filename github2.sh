@@ -15,6 +15,7 @@ TOTAL_DAYS=$(( (END_EPOCH - START_EPOCH) / 86400 ))
 FILE_TYPES=("java" "js" "py" "cpp" "go" "rs" "ts" "php" "rb" "swift")
 FILE_NAMES=("Main" "App" "Utils" "Helper" "Service" "Controller" "Model" "Config" "Test" "Handler")
 
+
 for i in $(seq 0 $TOTAL_DAYS); do
     # Calculate the date for this iteration
     CURRENT_DATE=$(date -I -d "$START_DATE + $i days")
