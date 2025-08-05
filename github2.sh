@@ -14,7 +14,7 @@ TOTAL_DAYS=$(( (END_EPOCH - START_EPOCH) / 86400 ))
 
 # Array of file types and extensions
 FILE_TYPES=("java" "js" "py" "cpp" "go" "rs" "ts" "php" "rb" "swift")
-FILE_NAMES=("Main" "App" "Utils" "Helper" "Service" "Controller" "Model" "Config" "Test" "Handler")
+FILE_NAMES=("Main" "App" "Utils" "Helper" "Service" "Controller" "Model" "Config" "Test")
 
 
 
