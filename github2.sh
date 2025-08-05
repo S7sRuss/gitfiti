@@ -19,8 +19,8 @@ for i in $(seq 0 $TOTAL_DAYS); do
     # Calculate the date for this iteration
     CURRENT_DATE=$(date -I -d "$START_DATE + $i days")
     
-    # Randomly decide whether to make a commit (50% chance)
-    if [ $((RANDOM % 2)) -eq 0 ]; then
+    # Using modulo 100 for exact percentage
+    if [ $((RANDOM % 100)) -lt 30 ]; then
         echo "$CURRENT_DATE - Daily update"
         
         # Randomly select file type and name
@@ -31,35 +31,35 @@ for i in $(seq 0 $TOTAL_DAYS); do
         # Create different types of "code" content based on file type
         case $FILE_EXT in
             "java")
-                echo "// Updated on $CURRENT_DATE" > $FILENAME
+                echo "// Updated on $CURRENT_DATE" >> $FILENAME
                 echo "public class $FILE_NAME {" >> $FILENAME
                 echo "    // TODO: Implement functionality" >> $FILENAME
                 echo "}" >> $FILENAME
                 ;;
             "js")
-                echo "// Updated on $CURRENT_DATE" > $FILENAME
+                echo "// Updated on $CURRENT_DATE" >> $FILENAME
                 echo "function ${FILE_NAME,,}() {" >> $FILENAME
                 echo "    // TODO: Add implementation" >> $FILENAME
                 echo "}" >> $FILENAME
                 ;;
             "py")
-                echo "# Updated on $CURRENT_DATE" > $FILENAME
+                echo "# Updated on $CURRENT_DATE" >> $FILENAME
                 echo "def ${FILE_NAME,,}():" >> $FILENAME
                 echo "    # TODO: Add implementation" >> $FILENAME
                 echo "    pass" >> $FILENAME
                 ;;
             "cpp")
-                echo "// Updated on $CURRENT_DATE" > $FILENAME
+                echo "// Updated on $CURRENT_DATE" >> $FILENAME
                 echo "#include <iostream>" >> $FILENAME
                 echo "// TODO: Implement $FILE_NAME" >> $FILENAME
                 ;;
             "go")
-                echo "// Updated on $CURRENT_DATE" > $FILENAME
+                echo "// Updated on $CURRENT_DATE" >> $FILENAME
                 echo "package main" >> $FILENAME
                 echo "// TODO: Implement $FILE_NAME" >> $FILENAME
                 ;;
             *)
-                echo "// Updated on $CURRENT_DATE" > $FILENAME
+                echo "// Updated on $CURRENT_DATE" >> $FILENAME
                 echo "// TODO: Implement $FILE_NAME functionality" >> $FILENAME
                 ;;
         esac
